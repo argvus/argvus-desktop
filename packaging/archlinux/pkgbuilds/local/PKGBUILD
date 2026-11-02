@@ -1,0 +1,82 @@
+# Maintainer: William C. Canin
+pkgname=argvus-desktop
+pkgver=0.0.0
+pkgrel=1
+pkgdesc="Everyday applications and desktop components for ARGVUS"
+arch=('any')
+url="https://github.com/argvus/argvus-desktop"
+license=('GPL-3.0-only')
+depends=(
+	'wayland'
+	'hyprland'
+	'firefox'
+	'mpv'
+	'audacious'
+	'nautilus'
+	'gpu-screen-recorder'
+	'xarchiver'
+	'inkscape'
+	'gimp'
+	'mousepad'
+	'hyprland-guiutils'
+	'hyprland-qt-support'
+	'hyprpolkitagent'
+	'greetd'
+	'polkit'
+	'qt5-quickcontrols2'
+	'qt5ct'
+	'qt6-tools'
+	'gtk4'
+	'gtk-layer-shell'
+	'gtk4-layer-shell'
+	'glib2'
+	'libdrm'
+	'mesa'
+	'mesa-utils'
+	'hyprshot'
+	'grim'
+	'slurp'
+	'satty'
+	'cliphist'
+	'wl-clipboard'
+	'wtype'
+	'swaybg'
+	'gsimplecal'
+	'udiskie'
+	'udisks2'
+	'adwaita-icon-theme'
+	'vivid'
+	'imv'
+	'kitty'
+	'feh'
+	'xdg-utils'
+	'gst-plugins-base'
+	'gst-plugins-good'
+	'wireplumber'
+	'okular'
+	'wf-recorder'
+	'zathura'
+	'wireguard-tools'
+)
+optdepends=(
+	'virtualbox-guest-utils: integration when running ARGVUS in VirtualBox'
+)
+options=('!debug')
+source=("${pkgname}-${pkgver}.tar.gz")
+sha256sums=()
+
+# shellcheck disable=SC1091
+_functions_file="${startdir:-$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)}/../common/functions.sh"
+. "$_functions_file"
+
+prepare() {
+	arch_normalize_source_tree
+}
+
+check() {
+	arch_check_metapackage
+}
+
+package() {
+	arch_package_metapackage
+}
