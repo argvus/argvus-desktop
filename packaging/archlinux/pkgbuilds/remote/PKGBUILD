@@ -34,6 +34,7 @@ depends=(
 	'mesa'
 	'mesa-utils'
 	'hyprshot'
+    'fastfetch'
 	'grim'
 	'slurp'
 	'satty'

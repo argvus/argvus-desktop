@@ -36,6 +36,7 @@ depends=(
 	'hyprshot'
 	'grim'
 	'slurp'
+    'fastfetch'
 	'satty'
 	'cliphist'
 	'wl-clipboard'
